@@ -13,7 +13,10 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: hello
         with:
-          who-to-greet: "Mona the Octocat"
+          role-to-assume: arn:aws:iam::875765950574:role/oidc-test
+          aws-region: us-east-1
       # Use the output from the `hello` step
+      - name:
+        run: aws sts get-caller-identity
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
