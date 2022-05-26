@@ -218,6 +218,9 @@ async function validateCredentials(expectedAccessKeyId) {
       throw new Error('Access key ID empty after loading credentials');
     }
   } catch (error) {
+    console.log("error");
+    console.log(error);
+    console.log(error.stack);
     throw new Error(`Credentials could not be loaded, please check your action inputs: ${error.message}`);
   }
 
