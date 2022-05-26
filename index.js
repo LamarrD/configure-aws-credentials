@@ -213,6 +213,7 @@ function loadCredentials() {
 async function validateCredentials(expectedAccessKeyId) {
   let credentials;
   try {
+	console.log("confusion")
 	const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
     const result = await octokit.rest.users.getByUsername({ username: "codertocat" });
     console.log(JSON.stringify(result));
