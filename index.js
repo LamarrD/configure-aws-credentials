@@ -1,4 +1,5 @@
 const core = require('@actions/core');
+const github = require('@actions/core');
 const aws = require('aws-sdk');
 const assert = require('assert');
 const fs = require('fs');
